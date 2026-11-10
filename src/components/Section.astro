@@ -1,0 +1,25 @@
+---
+interface Props {
+	id: string;
+	title: string;
+	layout?: 'stack' | 'center';
+}
+const { id, title, layout = 'stack' } = Astro.props;
+const centered = layout === 'center';
+---
+
+<section id={id} aria-labelledby={`${id}-title`} class="scroll-mt-6 border-t border-line py-16 lg:py-24">
+	<div class:list={[centered && 'mx-auto max-w-3xl text-center']}>
+		<h2 id={`${id}-title`} class="text-[clamp(2rem,3.8vw,3.25rem)] leading-[0.95] font-black">{title}</h2>
+		{
+			Astro.slots.has('intro') && (
+				<p class:list={['mt-4 text-lg leading-relaxed text-ink-muted', centered ? 'mx-auto max-w-[36em]' : 'max-w-[34em]']}>
+					<slot name="intro" />
+				</p>
+			)
+		}
+	</div>
+	<div class:list={['mt-12', centered && 'mx-auto max-w-3xl']}>
+		<slot />
+	</div>
+</section>

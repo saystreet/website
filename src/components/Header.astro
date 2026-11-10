@@ -1,0 +1,15 @@
+---
+import { DEMO_URL, DEVPOST_URL, GITHUB_URL } from '../data/site';
+import ExternalLink from './ExternalLink.astro';
+import Logo from './Logo.astro';
+---
+
+<header class="flex h-[5.5rem] items-center justify-between">
+	<Logo class="h-9" />
+	<nav aria-label="Main" class="hidden items-center gap-11 text-ink-muted md:flex">
+		<a href="#how" class="hover:text-ink">How it works</a>
+		<ExternalLink href={GITHUB_URL} class="hover:text-ink">GitHub</ExternalLink>
+		<ExternalLink href={DEVPOST_URL} class="hover:text-ink">Devpost</ExternalLink>
+	</nav>
+	<ExternalLink href={DEMO_URL} class="min-h-11 rounded-full bg-ink px-6 py-3 text-base font-bold text-accent-ink">Try the demo</ExternalLink>
+</header>

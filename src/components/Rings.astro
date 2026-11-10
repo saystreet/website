@@ -1,0 +1,31 @@
+---
+const RINGS = 8;
+const GAP = 20;
+
+const dots = Array.from({ length: RINGS }, (_, i) => {
+	const ring = i + 1;
+	const radius = ring * GAP;
+	const count = Math.round((2 * Math.PI * radius) / 15);
+	const t = ring / RINGS;
+	return Array.from({ length: count }, (_, k) => {
+		const angle = (k / count) * 2 * Math.PI;
+		return {
+			x: (radius * Math.cos(angle)).toFixed(2),
+			y: (radius * Math.sin(angle)).toFixed(2),
+			r: (2 + (1 - t) * 1.8).toFixed(2),
+			o: (0.25 + (1 - t) * 0.65).toFixed(2),
+		};
+	});
+}).flat();
+
+interface Props {
+	class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<svg aria-hidden="true" focusable="false" viewBox="-190 -190 380 380" class={className}>
+	<circle r="176" fill="var(--color-surface-1)"></circle>
+	{dots.map((d) => <circle cx={d.x} cy={d.y} r={d.r} fill="var(--color-accent)" opacity={d.o}></circle>)}
+	<circle r="9" fill="var(--color-accent)" class="motion-safe:animate-pulse"></circle>
+</svg>

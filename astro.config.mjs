@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,6 +9,7 @@ export default defineConfig({
 	trailingSlash: 'never',
 	// Small stylesheets: inline them so they don't block the first paint with an extra request.
 	build: { format: 'file', inlineStylesheets: 'always' },
+	vite: { plugins: [tailwindcss()] },
 	security: {
 		// CSP as a <meta> tag on every page, with hashes of every inline script and style Astro renders.
 		// Directives a <meta> CSP can't carry (frame-ancestors) are sent as a header in public/_headers.

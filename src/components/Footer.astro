@@ -1,0 +1,15 @@
+---
+import { CONTACT, DEVPOST_URL, GITHUB_URL } from '../data/site';
+import ExternalLink from './ExternalLink.astro';
+import Logo from './Logo.astro';
+---
+
+<footer class="flex flex-wrap items-center justify-between gap-6 border-t border-line py-10 text-base text-ink-muted">
+	<Logo class="h-7" />
+	<nav aria-label="Project" class="flex flex-wrap gap-x-8 gap-y-2">
+		<ExternalLink href={GITHUB_URL} class="hover:text-ink">GitHub</ExternalLink>
+		<ExternalLink href={DEVPOST_URL} class="hover:text-ink">Devpost</ExternalLink>
+		{CONTACT && <ExternalLink href={CONTACT.href} class="hover:text-ink">{CONTACT.label}</ExternalLink>}
+		<span>MIT license</span>
+	</nav>
+</footer>

@@ -1,0 +1,12 @@
+---
+import { SITE_NAME } from '../data/site';
+
+interface Props {
+	class?: string;
+}
+const { class: className = 'h-9' } = Astro.props;
+---
+
+<a href="/" class="inline-flex shrink-0">
+	<img src="/brand/lockup-for-dark-bg.svg" alt={SITE_NAME} width="1988" height="400" class:list={['w-auto', className]} />
+</a>

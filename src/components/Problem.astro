@@ -1,0 +1,26 @@
+---
+import Section from './Section.astro';
+
+const breaks = [
+	{ title: 'Captchas', text: 'Image puzzles and “I’m not a robot” checks are built around what you can see.' },
+	{
+		title: 'Unlabeled buttons',
+		text: 'When a button has no text, a screen reader says only “button”, and you can’t tell Pay from Cancel.',
+	},
+	{ title: 'Logo-only payment', text: 'Payment methods shown as pictures leave nothing to read, so you can’t choose one.' },
+];
+---
+
+<Section id="problem" title="Checkout is where it breaks.">
+	<p slot="intro">Product pages mostly work with a screen reader. The payment step is where people get stuck.</p>
+	<ul class="grid gap-10 md:grid-cols-3 md:gap-8">
+		{
+			breaks.map((b) => (
+				<li class="border-t-2 border-accent pt-5">
+					<h3 class="text-3xl leading-none font-black uppercase">{b.title}</h3>
+					<p class="mt-4 text-lg leading-relaxed text-ink-muted">{b.text}</p>
+				</li>
+			))
+		}
+	</ul>
+</Section>

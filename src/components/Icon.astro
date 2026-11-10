@@ -1,0 +1,24 @@
+---
+import microphone from '@phosphor-icons/core/assets/regular/microphone.svg?raw';
+import chat from '@phosphor-icons/core/assets/regular/chat-circle-text.svg?raw';
+import shield from '@phosphor-icons/core/assets/regular/shield-check.svg?raw';
+import plugs from '@phosphor-icons/core/assets/regular/plugs-connected.svg?raw';
+
+const icons = { microphone, chat, shield, plugs };
+
+interface Props {
+	name: keyof typeof icons;
+	/** Filled accent box, used for the parts we built. */
+	ours?: boolean;
+}
+const { name, ours = false } = Astro.props;
+---
+
+<span
+	aria-hidden="true"
+	class:list={[
+		'grid size-10 shrink-0 place-items-center rounded-(--radius-control) [&_svg]:size-6',
+		ours ? 'bg-accent text-accent-ink' : 'border border-line bg-surface-3 text-ink',
+	]}
+	set:html={icons[name]}
+></span>

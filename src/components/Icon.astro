@@ -18,7 +18,7 @@ const { name, ours = false } = Astro.props;
 	aria-hidden="true"
 	class:list={[
 		'grid size-10 shrink-0 place-items-center rounded-(--radius-control) [&_svg]:size-6',
-		ours ? 'bg-accent text-accent-ink' : 'border border-line bg-surface-3 text-ink',
+		ours ? 'bg-accent text-accent-ink' : 'border border-edge bg-surface-3 text-ink',
 	]}
 	set:html={icons[name]}
 ></span>

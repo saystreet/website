@@ -1,5 +1,5 @@
 ---
-import { CONTACT, DEVPOST_URL, GITHUB_URL } from '../data/site';
+import { CONTACT, DEVPOST_URL, GITHUB_URL, LICENSE_URL } from '../data/site';
 import ExternalLink from './ExternalLink.astro';
 import Logo from './Logo.astro';
 ---
@@ -10,6 +10,6 @@ import Logo from './Logo.astro';
 		<ExternalLink href={GITHUB_URL} class="hover:text-ink">GitHub</ExternalLink>
 		<ExternalLink href={DEVPOST_URL} class="hover:text-ink">Devpost</ExternalLink>
 		{CONTACT && <ExternalLink href={CONTACT.href} class="hover:text-ink">{CONTACT.label}</ExternalLink>}
-		<span>MIT license</span>
+		<ExternalLink href={LICENSE_URL} class="hover:text-ink">MIT license</ExternalLink>
 	</nav>
 </footer>

@@ -11,5 +11,6 @@ export const INDEXING = false;
 
 export const DEMO_URL = 'https://demo.saystreet.app';
 export const DEVPOST_URL = 'https://paypalaihackathon.devpost.com/';
-export const GITHUB_URL = 'https://github.com/wordbondlabs';
+export const GITHUB_URL = 'https://github.com/saystreet/website';
+export const LICENSE_URL = 'https://github.com/saystreet/website/blob/main/LICENSE';
 export const CONTACT: { label: string; href: string } | null = null;

@@ -1,6 +1,7 @@
 // Single source of truth for the site name and copy reused across pages. The site URL lives in astro.config.mjs.
 
 export const SITE_NAME = 'SayStreet';
+export const SITE_TITLE = 'Accessible online shopping | SayStreet';
 export const SITE_DESCRIPTION =
 	'An accessible entry point to online shopping for blind and low-vision people. Find, buy, track and return in one conversation.';
 export const THEME_COLOR = '#0a1124';

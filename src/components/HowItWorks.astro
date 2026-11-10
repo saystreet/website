@@ -1,22 +1,22 @@
 ---
-import { DEVPOST_URL, SITE_NAME } from '../data/site';
-import ExternalLink from './ExternalLink.astro';
+import { SITE_NAME } from '../data/site';
 import Connector from './Connector.astro';
 import Icon from './Icon.astro';
 import Section from './Section.astro';
 
+const paypal = [
+	{ name: 'Saved wallet', uses: 'No card forms, no captchas.' },
+	{ name: 'Exact amount', uses: 'One order per amount you confirm.' },
+	{ name: 'Refunds and updates', uses: 'From the same chat.' },
+];
 const partners = [
-	{ name: 'PayPal', uses: 'Vault, Orders, Payments, Webhooks' },
-	{ name: 'Channel3', uses: 'Product search, product by link' },
+	{ name: 'Channel3', uses: 'Search 100M+ products, product by link' },
 	{ name: 'Render', uses: 'Hosting and database' },
 ];
 const card = 'rounded-(--radius-panel) border bg-surface-2 p-6';
 ---
 
 <Section id="how" title="How it works.">
-	<Fragment slot="intro">
-		Built for the <ExternalLink href={DEVPOST_URL} class="underline underline-offset-4 hover:text-ink">PayPal AI Hackathon</ExternalLink>.
-	</Fragment>
 	<div class="mx-auto grid max-w-xl gap-0 xl:max-w-none xl:grid-cols-[1fr_8rem_1.3fr_8rem_1.2fr] xl:items-center">
 		<div class:list={[card, 'border-edge']}>
 			<div class="flex items-center gap-3">
@@ -60,22 +60,44 @@ const card = 'rounded-(--radius-panel) border bg-surface-2 p-6';
 
 		<Connector label="Products, payments, voice" />
 
-		<div class:list={[card, 'border-edge']}>
-			<div class="flex items-center gap-3">
-				<Icon name="plugs" />
-				<h3 class="text-2xl leading-tight font-bold">Partners</h3>
+		<div class="grid gap-6">
+			<div class:list={[card, 'border-edge']}>
+				<div class="flex items-center gap-3">
+					<Icon name="wallet" />
+					<div>
+						<h3 class="text-2xl leading-tight font-bold">PayPal</h3>
+						<p class="text-sm text-ink-muted">Checkout</p>
+					</div>
+				</div>
+				<dl class="mt-4 divide-y divide-line">
+					{
+						paypal.map((p) => (
+							<div class="py-3 first:pt-0 last:pb-0">
+								<dt class="font-display text-xl leading-tight font-black uppercase">{p.name}</dt>
+								<dd class="mt-0.5 text-base text-ink-muted">{p.uses}</dd>
+							</div>
+						))
+					}
+				</dl>
 			</div>
-			<dl class="mt-4 divide-y divide-line">
-				{
-					partners.map((p) => (
-						<div class="py-3 first:pt-0 last:pb-0">
-							<dt class="font-display text-xl leading-tight font-black uppercase">{p.name}</dt>
-							<dd class="mt-0.5 text-base text-ink-muted">{p.uses}</dd>
-						</div>
-					))
-				}
-			</dl>
-			<p class="mt-4 border-t border-line pt-4 text-sm text-ink-muted">AI model: OpenAI. Agent, speech-to-text, voice.</p>
+
+			<div class:list={[card, 'border-edge']}>
+				<div class="flex items-center gap-3">
+					<Icon name="plugs" />
+					<h3 class="text-2xl leading-tight font-bold">Partners</h3>
+				</div>
+				<dl class="mt-4 divide-y divide-line">
+					{
+						partners.map((p) => (
+							<div class="py-3 first:pt-0 last:pb-0">
+								<dt class="font-display text-xl leading-tight font-black uppercase">{p.name}</dt>
+								<dd class="mt-0.5 text-base text-ink-muted">{p.uses}</dd>
+							</div>
+						))
+					}
+				</dl>
+				<p class="mt-4 border-t border-line pt-4 text-sm text-ink-muted">OpenAI provides the agent, speech-to-text and voice.</p>
+			</div>
 		</div>
 	</div>
 </Section>

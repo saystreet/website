@@ -7,9 +7,9 @@ import Logo from './Logo.astro';
 <footer class="flex flex-wrap items-center justify-between gap-6 border-t border-line py-10 text-base text-ink-muted">
 	<Logo class="h-7" />
 	<nav aria-label="Project" class="flex flex-wrap gap-x-8 gap-y-2">
-		<ExternalLink href={GITHUB_URL} class="hover:text-ink">GitHub</ExternalLink>
-		<ExternalLink href={DEVPOST_URL} class="hover:text-ink">Devpost</ExternalLink>
-		{CONTACT && <ExternalLink href={CONTACT.href} class="hover:text-ink">{CONTACT.label}</ExternalLink>}
-		<ExternalLink href={LICENSE_URL} class="hover:text-ink">MIT license</ExternalLink>
+		<ExternalLink href={GITHUB_URL} class="inline-flex min-h-11 items-center hover:text-ink">GitHub</ExternalLink>
+		<ExternalLink href={DEVPOST_URL} class="inline-flex min-h-11 items-center hover:text-ink">Devpost</ExternalLink>
+		{CONTACT && <ExternalLink href={CONTACT.href} class="inline-flex min-h-11 items-center hover:text-ink">{CONTACT.label}</ExternalLink>}
+		<ExternalLink href={LICENSE_URL} class="inline-flex min-h-11 items-center hover:text-ink">MIT license</ExternalLink>
 	</nav>
 </footer>

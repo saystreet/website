@@ -11,7 +11,7 @@
 	--color-line: rgb(255 255 255 / 0.12);
 	--color-edge: rgb(255 255 255 / 0.42);
 	--color-ink: #eef0f6;
-	--color-ink-muted: #9aa5c2;
+	--color-ink-muted: #a9b3cd;
 	--color-accent: #ffd166;
 	--color-accent-ink: #0a1124;
 
@@ -76,14 +76,4 @@
 	overflow: hidden;
 	clip-path: inset(50%);
 	white-space: nowrap;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.001ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.001ms !important;
-	}
 }

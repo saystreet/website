@@ -2,12 +2,21 @@
 import Section from './Section.astro';
 
 const breaks = [
-	{ title: 'Captchas', text: 'Image puzzles and “I’m not a robot” checks are built around what you can see.' },
+	{
+		title: 'Captchas',
+		text: 'Image puzzles and “I’m not a robot” checks are built around what you can see.',
+		answer: 'You pay from a saved PayPal wallet.',
+	},
 	{
 		title: 'Unlabeled buttons',
 		text: 'When a button has no text, a screen reader says only “button”, and you can’t tell Pay from Cancel.',
+		answer: 'A clear, labeled interface for screen readers and low-vision users, where Pay names the amount and the store.',
 	},
-	{ title: 'Logo-only payment', text: 'Payment methods shown as pictures leave nothing to read, so you can’t choose one.' },
+	{
+		title: 'Logo-only payment',
+		text: 'Payment methods shown as pictures leave nothing to read, so you can’t choose one.',
+		answer: 'Payment is a single plain step, with the method, amount and store all written out.',
+	},
 ];
 ---
 
@@ -19,6 +28,7 @@ const breaks = [
 				<li class="border-t-2 border-accent pt-5">
 					<h3 class="text-3xl leading-none font-black uppercase">{b.title}</h3>
 					<p class="mt-4 text-lg leading-relaxed text-ink-muted">{b.text}</p>
+					<p class="mt-4 border-t border-line pt-4 text-lg leading-relaxed"><span class="sr-only">Our answer. </span>{b.answer}</p>
 				</li>
 			))
 		}

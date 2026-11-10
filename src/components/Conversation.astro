@@ -3,15 +3,15 @@ import { SITE_NAME } from '../data/site';
 import Section from './Section.astro';
 
 const options = [
-	{ n: '01', name: 'Stainless whistling kettle', price: '$39.99', on: true },
-	{ n: '02', name: 'Enamel stovetop kettle', price: '$36.50', on: false },
-	{ n: '03', name: 'Glass electric kettle', price: '$38.00', on: false },
+	{ n: '01', name: 'Stainless whistling kettle', store: 'KettleCo', price: '$39.99', on: true },
+	{ n: '02', name: 'Enamel stovetop kettle', store: 'Hearth & Co', price: '$36.50', on: false },
+	{ n: '03', name: 'Glass electric kettle', store: 'Clear Home', price: '$38.00', on: false },
 ];
 ---
 
 <Section id="conversation" layout="center" title="Say what you need.">
 	<Fragment slot="intro">
-		{SITE_NAME} finds the product, reads out the options and asks for the exact amount before anything is paid. Replies are read
+		{SITE_NAME} finds the product in different stores, reads out the options and asks for the exact amount before anything is paid. Replies are read
 		by your screen reader or by {SITE_NAME} itself, so you don’t need one. Track and return from the same chat.
 	</Fragment>
 	<figure aria-label="Example conversation" class="overflow-hidden rounded-(--radius-panel) border border-edge bg-surface-1 text-left">
@@ -37,7 +37,7 @@ const options = [
 								]}
 							>
 								<span class="data text-sm text-accent">{o.n}</span>
-								<span class="text-lg">{o.name}</span>
+								<span class="text-lg">{o.name}<span class="block text-sm text-ink-muted">{o.store}</span></span>
 								<span class="data text-base">{o.price}</span>
 							</li>
 						))
@@ -57,10 +57,11 @@ const options = [
 						<div class="flex justify-between"><dt class="text-ink-muted">Shipping</dt><dd>$5.00</dd></div>
 						<div class="flex justify-between border-t border-line pt-2 text-lg"><dt>Total</dt><dd>$39.99</dd></div>
 					</dl>
-					<div class="mt-5 flex flex-wrap items-center gap-3">
+					<div class="mt-5 flex flex-wrap items-center gap-3" aria-hidden="true">
 						<span class="rounded-full bg-ink px-6 py-3 text-base font-bold text-accent-ink">Pay $39.99 to KettleCo</span>
 						<span class="px-3 py-3 text-base text-ink-muted">Cancel</span>
 					</div>
+					<p class="sr-only">In the app these are two buttons, Pay $39.99 to KettleCo and Cancel.</p>
 					<p class="mt-4 text-sm text-ink-muted">Or say “pay thirty-nine ninety-nine”.</p>
 				</div>
 			</div>

@@ -1,21 +1,24 @@
 ---
-import { DEMO_URL } from '../data/site';
+import { DEMO_URL, DEVPOST_URL } from '../data/site';
 import ExternalLink from './ExternalLink.astro';
 import Rings from './Rings.astro';
 ---
 
-<div class="grid items-center gap-12 py-10 lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[1fr_30rem] lg:gap-16 lg:pt-4 lg:pb-16">
+<div class="grid items-center gap-12 py-10 lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[1fr_30rem] lg:gap-16 lg:py-8">
 	<section aria-labelledby="hero-title">
-		<h1 id="hero-title" class="text-[clamp(3.75rem,8.4vw,9rem)] leading-[0.86] font-black">
+		<h1 id="hero-title" class="text-[clamp(3.75rem,min(8.4vw,14svh),9rem)] leading-[0.86] font-black">
 			<span class="text-accent">Accessible</span> online shopping.
 		</h1>
-		<p class="mt-8 max-w-[24em] text-xl leading-relaxed text-ink-muted sm:text-2xl">
-			An entry point for blind and low-vision people. Find, buy, track and return, all in one conversation.
+		<p class="mt-6 max-w-[30em] text-xl leading-relaxed text-ink-muted 2xl:text-2xl">
+			An entry point for blind and low-vision people. Search millions of products from thousands of stores, then buy, track and return, all in one conversation.
 		</p>
-		<div class="mt-10 flex flex-wrap items-center gap-7">
+		<div class="mt-8 flex flex-wrap items-center gap-7">
 			<ExternalLink href={DEMO_URL} class="min-h-12 forced-colors:border-2 rounded-full bg-ink px-9 py-4 text-lg font-bold text-accent-ink">Try the demo</ExternalLink>
-			<a href="#how" class="text-lg text-ink-muted underline underline-offset-4 hover:text-ink">See how it works</a>
+			<a href="#how" class="inline-flex min-h-11 items-center text-lg text-ink-muted underline underline-offset-4 hover:text-ink">See how it works</a>
 		</div>
+		<p class="mt-6 max-w-[28em] text-base text-ink-muted">
+			Built for the <ExternalLink href={DEVPOST_URL} class="underline underline-offset-4 hover:text-ink">PayPal AI Hackathon</ExternalLink>.
+		</p>
 	</section>
 	<div class="w-full max-w-[30rem] justify-self-center lg:justify-self-end">
 		<Rings class="w-full" />

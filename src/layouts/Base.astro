@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import displayFont from '@fontsource-variable/big-shoulders-display/files/big-shoulders-display-latin-wght-normal.woff2?url';
+import textFont from '@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2?url';
 import { INDEXING, SITE_NAME, THEME_COLOR } from '../data/site';
 
 interface Props {
@@ -29,6 +31,8 @@ const ogImageUrl = ogImage && new URL(ogImage, Astro.site).href;
 		<link rel="icon" href="/favicon.ico" sizes="32x32" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="apple-touch-icon" href="/brand/app-icon-1024.png" />
+		<link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href={textFont} as="font" type="font/woff2" crossorigin />
 		<meta name="theme-color" content={THEME_COLOR} />
 		<meta name="color-scheme" content="dark" />
 		<meta property="og:type" content="website" />

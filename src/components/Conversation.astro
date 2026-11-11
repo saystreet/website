@@ -11,7 +11,7 @@ const options = [
 
 <Section id="conversation" layout="center" title="Say what you need.">
 	<Fragment slot="intro">
-		{SITE_NAME} finds the product in different stores, reads out the options and asks for the exact amount before anything is paid. Replies are read
+		{SITE_NAME} finds the product in different stores, reads out the options, answers your questions about them and asks for the exact amount before anything is paid, within the spending limits you set. Replies are read
 		by your screen reader or by {SITE_NAME} itself, so you don’t need one. Track and return from the same chat.
 	</Fragment>
 	<figure aria-label="Example conversation" class="overflow-hidden rounded-(--radius-panel) border border-edge bg-surface-1 text-left">
@@ -52,16 +52,17 @@ const options = [
 				<p class="mb-1.5 text-sm text-ink-muted">{SITE_NAME}</p>
 				<div class="border-t-2 border-accent pt-5">
 					<p class="text-lg font-bold">Ready to pay</p>
+					<p class="text-base text-ink-muted">Stainless whistling kettle, from KettleCo</p>
 					<dl class="data mt-3 space-y-1 text-base">
 						<div class="flex justify-between"><dt class="text-ink-muted">Item</dt><dd>$34.99</dd></div>
 						<div class="flex justify-between"><dt class="text-ink-muted">Shipping</dt><dd>$5.00</dd></div>
 						<div class="flex justify-between border-t border-line pt-2 text-lg"><dt>Total</dt><dd>$39.99</dd></div>
 					</dl>
 					<div class="mt-5 flex flex-wrap items-center gap-3" aria-hidden="true">
-						<span class="rounded-full bg-ink px-6 py-3 text-base font-bold text-accent-ink">Pay $39.99 to KettleCo</span>
-						<span class="px-3 py-3 text-base text-ink-muted">Cancel</span>
+						<span class="rounded-full bg-ink px-6 py-3 text-base font-bold text-accent-ink">Pay $39.99 with PayPal</span>
+						<span class="px-3 py-3 text-base text-ink-muted">Cancel payment</span>
 					</div>
-					<p class="sr-only">In the app these are two buttons, Pay $39.99 to KettleCo and Cancel.</p>
+					<p class="sr-only">In the app these are two buttons, Pay $39.99 with PayPal to KettleCo, and Cancel payment.</p>
 					<p class="mt-4 text-sm text-ink-muted">Or say “pay thirty-nine ninety-nine”.</p>
 				</div>
 			</div>

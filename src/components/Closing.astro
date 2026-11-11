@@ -1,6 +1,5 @@
 ---
 import { DEMO_URL } from '../data/site';
-import ExternalLink from './ExternalLink.astro';
 ---
 
 <section aria-labelledby="closing-title" class="border-t border-line py-24 text-center lg:py-32">
@@ -10,5 +9,5 @@ import ExternalLink from './ExternalLink.astro';
 	<p class="mx-auto mt-5 max-w-[34em] text-lg leading-relaxed text-ink-muted sm:text-xl">
 		No email, no password. You get a sandbox PayPal wallet, a demo address and a few sample orders.
 	</p>
-	<ExternalLink href={DEMO_URL} class="mt-9 inline-flex min-h-12 items-center forced-colors:border-2 rounded-full bg-ink px-9 py-4 text-lg font-bold text-accent-ink">Try the demo</ExternalLink>
+	<a href={DEMO_URL} class="mt-9 inline-flex min-h-12 items-center forced-colors:border-2 rounded-full bg-ink px-9 py-4 text-lg font-bold text-accent-ink">Try the demo</a>
 </section>

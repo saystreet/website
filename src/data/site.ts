@@ -12,7 +12,8 @@ export const THEME_COLOR = '#0a1124';
 export const INDEXING = true;
 
 export const DEMO_URL = 'https://demo.saystreet.app';
-export const DEVPOST_URL = 'https://paypalaihackathon.devpost.com/';
+export const DEVPOST_URL = 'https://devpost.com/software/saystreet';
+export const HACKATHON_URL = 'https://paypalaihackathon.devpost.com/';
 export const GITHUB_URL = 'https://github.com/saystreet/demo';
 export const LICENSE_URL = 'https://github.com/saystreet/demo/blob/main/LICENSE';
 export const CONTACT: { label: string; href: string } | null = null;

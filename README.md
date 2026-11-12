@@ -1,6 +1,6 @@
 # SayStreet website
 
-The landing page for [SayStreet](https://saystreet.app), an accessible entry point to online shopping for blind and low-vision people: find, buy, track and return in one conversation. Built for the [PayPal AI Hackathon](https://paypalaihackathon.devpost.com/).
+The landing page for [SayStreet](https://saystreet.app): accessible online shopping for blind and low-vision people. Find, buy, track and return in one conversation. Built for the [PayPal AI Hackathon](https://paypalaihackathon.devpost.com/).
 
 The demo itself is a separate project at [demo.saystreet.app](https://demo.saystreet.app). This repository is only the landing page.
 
@@ -37,7 +37,7 @@ Hosted on Cloudflare Pages. Build command `pnpm build`, output directory `dist`.
 
 - Response headers are in `public/_headers`.
 - The content security policy is set in `astro.config.mjs`.
-- Search indexing is off until launch: see `INDEXING` in `src/data/site.ts` and the `X-Robots-Tag` line in `public/_headers`.
+- Search indexing is on: see `INDEXING` in `src/data/site.ts`. The `*.pages.dev` alias is kept out of search by a host rule in `public/_headers`.
 
 ## Accessibility
 

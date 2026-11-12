@@ -1,4 +1,4 @@
-# Indexing is off until launch (see INDEXING in src/data/site.ts): drop X-Robots-Tag below to open the site to search.
+# Indexing is on (see INDEXING in src/data/site.ts), except for the *.pages.dev alias below.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
@@ -7,7 +7,6 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  X-Robots-Tag: noindex
 
 # The *.pages.dev alias serves the same site: keep it out of search so only saystreet.app is indexed.
 # (Preview deployments on <hash>.<project>.pages.dev already get noindex from Pages.)

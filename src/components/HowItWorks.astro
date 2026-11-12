@@ -5,9 +5,9 @@ import Icon from './Icon.astro';
 import Section from './Section.astro';
 
 const paypal = [
-	{ name: 'Saved wallet', uses: 'No card forms, no captchas.' },
-	{ name: 'Exact amount', uses: 'One order per amount you confirm.' },
-	{ name: 'Refunds and updates', uses: 'From the same chat.' },
+	{ name: 'Vault', uses: 'Wallet saved once, no card forms.' },
+	{ name: 'Orders', uses: 'Creates and captures the charge.' },
+	{ name: 'Payments', uses: 'Refunds from the same chat.' },
 ];
 const partners = [
 	{ name: 'Channel3', uses: 'Search 100M+ products, product by link' },
@@ -66,7 +66,6 @@ const card = 'rounded-(--radius-panel) border bg-surface-2 p-6';
 					<Icon name="wallet" />
 					<div>
 						<h3 class="text-2xl leading-tight font-bold">PayPal</h3>
-						<p class="text-sm text-ink-muted">Checkout</p>
 					</div>
 				</div>
 				<dl class="mt-4 divide-y divide-line">
@@ -96,7 +95,7 @@ const card = 'rounded-(--radius-panel) border bg-surface-2 p-6';
 						))
 					}
 				</dl>
-				<p class="mt-4 border-t border-line pt-4 text-sm text-ink-muted">OpenAI provides the agent and speech-to-text. Your browser reads the replies aloud.</p>
+				<p class="mt-4 border-t border-line pt-4 text-sm text-ink-muted">OpenAI provides the agent and speech-to-text.</p>
 			</div>
 		</div>
 	</div>
